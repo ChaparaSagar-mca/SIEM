@@ -1,0 +1,13 @@
+flask==3.1.2
+scikit-learn==1.7.1
+pandas==2.3.2
+pyyaml==6.0.2
+tailer==0.4.1
+numpy==2.3.2
+matplotlib==3.10.6
+seaborn==0.13.2
+flask-cors==4.0.0
+requests==2.32.3
+sqlalchemy==2.0.32
+pytest==7.4.3
+faker==20.1.0

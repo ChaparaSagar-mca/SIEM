@@ -1,0 +1,125 @@
+version: '3.8'
+
+services:
+  # Main SIEM application
+  siem-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: siem-lite-app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=sqlite:///siem_data.db
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./agents/test_logs:/app/agents/test_logs
+    depends_on:
+      - redis
+    networks:
+      - siem-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Redis for caching and session management
+  redis:
+    image: redis:7-alpine
+    container_name: siem-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - siem-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # Development dashboard (React dev server)
+  dashboard-dev:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile.dev
+    container_name: siem-dashboard-dev
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./dashboard:/app
+      - /app/node_modules
+    networks:
+      - siem-network
+    profiles:
+      - dev
+    stdin_open: true
+    tty: true
+
+  # Log generator for testing
+  log-generator:
+    image: python:3.9-slim
+    container_name: siem-log-generator
+    volumes:
+      - ./agents/test_logs:/logs
+      - ./scripts:/scripts
+    command: >
+      sh -c "pip install faker && python /scripts/generate_test_logs.py"
+    networks:
+      - siem-network
+    profiles:
+      - testing
+    restart: "no"
+
+  # Monitoring with Prometheus (optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: siem-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - siem-network
+    profiles:
+      - monitoring
+    restart: unless-stopped
+
+  # Grafana for visualization (optional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: siem-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana:/etc/grafana/provisioning
+    networks:
+      - siem-network
+    profiles:
+      - monitoring
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+volumes:
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+networks:
+  siem-network:
+    driver: bridge

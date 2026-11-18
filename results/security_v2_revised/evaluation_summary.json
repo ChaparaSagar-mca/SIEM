@@ -1,0 +1,77 @@
+{
+    "dataset": "datasets\\security_events_v2.csv",
+    "dataset_type": "synthetic",
+    "total_records": 10000,
+    "total_campaigns": 2000,
+    "training_records": 8000,
+    "testing_records": 2000,
+    "training_campaigns": 1600,
+    "testing_campaigns": 400,
+    "campaign_overlap": 0,
+    "random_state": 42,
+    "test_size": 0.2,
+    "features": [
+        "source_port",
+        "destination_port",
+        "bytes_sent",
+        "bytes_received",
+        "duration_seconds",
+        "failed_login_count",
+        "connection_count",
+        "unique_destination_count",
+        "cpu_percent",
+        "memory_percent",
+        "process_count",
+        "protocol",
+        "auth_result",
+        "username",
+        "privilege_level"
+    ],
+    "classes": [
+        "anomalous_system_activity",
+        "failed_authentication",
+        "malware_related_activity",
+        "normal",
+        "suspicious_network_activity",
+        "unauthorized_access"
+    ],
+    "best_model_by_macro_f1": "svm",
+    "metrics": [
+        {
+            "model": "random_forest",
+            "accuracy": 0.4795,
+            "macro_precision": 0.4342099941389858,
+            "macro_recall": 0.4145007770512738,
+            "macro_f1": 0.39405221039744087
+        },
+        {
+            "model": "xgboost",
+            "accuracy": 0.4715,
+            "macro_precision": 0.41246958202771394,
+            "macro_recall": 0.43297710132790385,
+            "macro_f1": 0.41653795998343973
+        },
+        {
+            "model": "svm",
+            "accuracy": 0.484,
+            "macro_precision": 0.4316219231244735,
+            "macro_recall": 0.45005208596484936,
+            "macro_f1": 0.4346977861938231
+        },
+        {
+            "model": "logistic_regression",
+            "accuracy": 0.455,
+            "macro_precision": 0.40216083454716706,
+            "macro_recall": 0.4285012655495241,
+            "macro_f1": 0.4059457733185141
+        },
+        {
+            "model": "gradient_boosting",
+            "accuracy": 0.4635,
+            "macro_precision": 0.403145807007383,
+            "macro_recall": 0.4244150807804045,
+            "macro_f1": 0.4079136102648652
+        }
+    ],
+    "evaluation_note": "Results are from a synthetic dataset and should not be interpreted as real-world cybersecurity performance."
+}

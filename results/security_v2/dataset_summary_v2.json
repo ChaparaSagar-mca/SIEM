@@ -1,0 +1,18 @@
+{
+    "dataset": "datasets\\security_events_v2.csv",
+    "total_records": 10000,
+    "unique_campaigns": 2000,
+    "records_per_campaign": 5,
+    "random_seed": 42,
+    "synthetic_data": true,
+    "class_distribution": {
+        "normal": 3000,
+        "malware_related_activity": 1500,
+        "unauthorized_access": 1500,
+        "suspicious_network_activity": 1500,
+        "anomalous_system_activity": 1000,
+        "failed_authentication": 1500
+    },
+    "feature_policy": "Exclude identifiers, timestamp, raw IP addresses, event_source, event_type, process_name, file_operation and label from model inputs during this experiment. Audit remaining features for shortcuts before interpreting model performance.",
+    "note": "Synthetic proof-of-concept data. Statistical overlap does not establish real-world validity."
+}

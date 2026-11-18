@@ -1,0 +1,17 @@
+Directory listing for /Users/betre/Downloads/SIEM-lite-project:
+- `agents`
+- `ai-integration`
+- `dashboard`
+- `docs`
+- `node_modules`
+- `scripts`
+- `server`
+- `tests`
+- `.DS_Store`
+- `.gitignore`
+- `docker-compose.yml`
+- `LICENSE`
+- `package-lock.json`
+- `package.json`
+- `README.md`
+- `requirements.txt`

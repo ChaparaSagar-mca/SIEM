@@ -1,0 +1,8 @@
+{
+    "training_records": 1603,
+    "testing_records": 397,
+    "training_unique_patterns": 1518,
+    "testing_unique_patterns": 379,
+    "shared_feature_patterns": 0,
+    "duplicate_pattern_leakage_prevented": true
+}

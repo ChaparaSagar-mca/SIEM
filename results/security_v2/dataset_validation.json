@@ -1,0 +1,21 @@
+{
+    "total_records": 10000,
+    "total_columns": 25,
+    "unique_event_ids": 10000,
+    "unique_campaigns": 2000,
+    "missing_values": 0,
+    "duplicate_rows": 0,
+    "duplicate_event_ids": 0,
+    "campaigns_with_multiple_labels": 0,
+    "records_per_campaign": {
+        "5": 2000
+    },
+    "class_distribution": {
+        "normal": 3000,
+        "unauthorized_access": 1500,
+        "suspicious_network_activity": 1500,
+        "failed_authentication": 1500,
+        "malware_related_activity": 1500,
+        "anomalous_system_activity": 1000
+    }
+}

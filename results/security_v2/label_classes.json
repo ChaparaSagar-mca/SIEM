@@ -1,0 +1,8 @@
+[
+    "anomalous_system_activity",
+    "failed_authentication",
+    "malware_related_activity",
+    "normal",
+    "suspicious_network_activity",
+    "unauthorized_access"
+]

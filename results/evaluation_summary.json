@@ -1,0 +1,89 @@
+{
+    "dataset_records": 2000,
+    "training_records": 1603,
+    "testing_records": 397,
+    "random_state": 42,
+    "requested_test_size": 0.2,
+    "actual_test_size": 0.1985,
+    "class_names": [
+        "malicious",
+        "normal",
+        "suspicious"
+    ],
+    "feature_names": [
+        "status_code",
+        "hour",
+        "path_length",
+        "method_get",
+        "method_post",
+        "method_put",
+        "method_delete",
+        "method_other",
+        "user_agent_length",
+        "query_present",
+        "sqli_score",
+        "xss_score",
+        "traversal_score",
+        "scanner_score"
+    ],
+    "duplicate_check": {
+        "training_records": 1603,
+        "testing_records": 397,
+        "training_unique_patterns": 1518,
+        "testing_unique_patterns": 379,
+        "shared_feature_patterns": 0,
+        "duplicate_pattern_leakage_prevented": true
+    },
+    "models": [
+        {
+            "Model": "Random Forest",
+            "Accuracy": 0.9118387909319899,
+            "Macro Precision": 0.928367947799793,
+            "Macro Recall": 0.8679380240048332,
+            "Macro F1": 0.894738170534349,
+            "Weighted Precision": 0.91104542122736,
+            "Weighted Recall": 0.9118387909319899,
+            "Weighted F1": 0.9090410608179221
+        },
+        {
+            "Model": "XGBoost",
+            "Accuracy": 0.9193954659949622,
+            "Macro Precision": 0.9259752757420978,
+            "Macro Recall": 0.902112234365663,
+            "Macro F1": 0.9134187790691747,
+            "Weighted Precision": 0.9181312654144369,
+            "Weighted Recall": 0.9193954659949622,
+            "Weighted F1": 0.9182940039369635
+        },
+        {
+            "Model": "SVM",
+            "Accuracy": 0.8967254408060453,
+            "Macro Precision": 0.9096683250414593,
+            "Macro Recall": 0.8328263048985861,
+            "Macro F1": 0.8656096489240795,
+            "Weighted Precision": 0.8959473413787485,
+            "Weighted Recall": 0.8967254408060453,
+            "Weighted F1": 0.8924242084120155
+        },
+        {
+            "Model": "Logistic Regression",
+            "Accuracy": 0.8967254408060453,
+            "Macro Precision": 0.9159187451447083,
+            "Macro Recall": 0.8301537053407544,
+            "Macro F1": 0.8666630050713096,
+            "Weighted Precision": 0.8958084128509316,
+            "Weighted Recall": 0.8967254408060453,
+            "Weighted F1": 0.8921132141304192
+        },
+        {
+            "Model": "Gradient Boosting",
+            "Accuracy": 0.9219143576826196,
+            "Macro Precision": 0.9195367666373091,
+            "Macro Recall": 0.9086608029157427,
+            "Macro F1": 0.9138264563160327,
+            "Weighted Precision": 0.9208524135905024,
+            "Weighted Recall": 0.9219143576826196,
+            "Weighted F1": 0.9211700470851666
+        }
+    ]
+}

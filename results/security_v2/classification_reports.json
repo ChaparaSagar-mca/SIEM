@@ -1,0 +1,257 @@
+{
+    "Random Forest": {
+        "anomalous_system_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 210.0
+        },
+        "failed_authentication": {
+            "precision": 0.9111111111111111,
+            "recall": 0.9461538461538461,
+            "f1-score": 0.9283018867924528,
+            "support": 260.0
+        },
+        "malware_related_activity": {
+            "precision": 1.0,
+            "recall": 0.8740740740740741,
+            "f1-score": 0.932806324110672,
+            "support": 270.0
+        },
+        "normal": {
+            "precision": 0.9029957203994294,
+            "recall": 0.9813953488372092,
+            "f1-score": 0.9405646359583952,
+            "support": 645.0
+        },
+        "suspicious_network_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 260.0
+        },
+        "unauthorized_access": {
+            "precision": 0.8854489164086687,
+            "recall": 0.8056338028169014,
+            "f1-score": 0.8436578171091446,
+            "support": 355.0
+        },
+        "accuracy": 0.9355,
+        "macro avg": {
+            "precision": 0.9499259579865349,
+            "recall": 0.9345428453136718,
+            "f1-score": 0.9408884439951107,
+            "support": 2000.0
+        },
+        "weighted avg": {
+            "precision": 0.9368277469357992,
+            "recall": 0.9355,
+            "f1-score": 0.9346894566714152,
+            "support": 2000.0
+        }
+    },
+    "XGBoost": {
+        "anomalous_system_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 210.0
+        },
+        "failed_authentication": {
+            "precision": 0.9230769230769231,
+            "recall": 0.9230769230769231,
+            "f1-score": 0.9230769230769231,
+            "support": 260.0
+        },
+        "malware_related_activity": {
+            "precision": 0.9958847736625515,
+            "recall": 0.8962962962962963,
+            "f1-score": 0.9434697855750487,
+            "support": 270.0
+        },
+        "normal": {
+            "precision": 0.9107913669064748,
+            "recall": 0.9813953488372092,
+            "f1-score": 0.9447761194029851,
+            "support": 645.0
+        },
+        "suspicious_network_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 260.0
+        },
+        "unauthorized_access": {
+            "precision": 0.8795180722891566,
+            "recall": 0.8225352112676056,
+            "f1-score": 0.8500727802037845,
+            "support": 355.0
+        },
+        "accuracy": 0.9385,
+        "macro avg": {
+            "precision": 0.9515451893225176,
+            "recall": 0.9372172965796723,
+            "f1-score": 0.9435659347097901,
+            "support": 2000.0
+        },
+        "weighted avg": {
+            "precision": 0.939289118103108,
+            "recall": 0.9385,
+            "f1-score": 0.937946638046266,
+            "support": 2000.0
+        }
+    },
+    "SVM": {
+        "anomalous_system_activity": {
+            "precision": 1.0,
+            "recall": 0.9952380952380953,
+            "f1-score": 0.9976133651551312,
+            "support": 210.0
+        },
+        "failed_authentication": {
+            "precision": 0.8876404494382022,
+            "recall": 0.9115384615384615,
+            "f1-score": 0.8994307400379506,
+            "support": 260.0
+        },
+        "malware_related_activity": {
+            "precision": 0.8816793893129771,
+            "recall": 0.8555555555555555,
+            "f1-score": 0.868421052631579,
+            "support": 270.0
+        },
+        "normal": {
+            "precision": 0.9208400646203554,
+            "recall": 0.8837209302325582,
+            "f1-score": 0.9018987341772152,
+            "support": 645.0
+        },
+        "suspicious_network_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 260.0
+        },
+        "unauthorized_access": {
+            "precision": 0.7650130548302873,
+            "recall": 0.8253521126760563,
+            "f1-score": 0.7940379403794038,
+            "support": 355.0
+        },
+        "accuracy": 0.9,
+        "macro avg": {
+            "precision": 0.909195493033637,
+            "recall": 0.9119008592067878,
+            "f1-score": 0.9102336387302133,
+            "support": 2000.0
+        },
+        "weighted avg": {
+            "precision": 0.9021807140566588,
+            "recall": 0.9,
+            "f1-score": 0.9007163178409817,
+            "support": 2000.0
+        }
+    },
+    "Logistic Regression": {
+        "anomalous_system_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 210.0
+        },
+        "failed_authentication": {
+            "precision": 0.8721804511278195,
+            "recall": 0.8923076923076924,
+            "f1-score": 0.8821292775665399,
+            "support": 260.0
+        },
+        "malware_related_activity": {
+            "precision": 0.8308823529411765,
+            "recall": 0.837037037037037,
+            "f1-score": 0.8339483394833949,
+            "support": 270.0
+        },
+        "normal": {
+            "precision": 0.8932330827067669,
+            "recall": 0.9209302325581395,
+            "f1-score": 0.9068702290076336,
+            "support": 645.0
+        },
+        "suspicious_network_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 260.0
+        },
+        "unauthorized_access": {
+            "precision": 0.8195718654434251,
+            "recall": 0.7549295774647887,
+            "f1-score": 0.7859237536656891,
+            "support": 355.0
+        },
+        "accuracy": 0.895,
+        "macro avg": {
+            "precision": 0.9026446253698647,
+            "recall": 0.9008674232279429,
+            "f1-score": 0.9014785999538764,
+            "support": 2000.0
+        },
+        "weighted avg": {
+            "precision": 0.8940942515828156,
+            "recall": 0.895,
+            "f1-score": 0.8942269470445301,
+            "support": 2000.0
+        }
+    },
+    "Gradient Boosting": {
+        "anomalous_system_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 210.0
+        },
+        "failed_authentication": {
+            "precision": 0.9163498098859315,
+            "recall": 0.926923076923077,
+            "f1-score": 0.9216061185468452,
+            "support": 260.0
+        },
+        "malware_related_activity": {
+            "precision": 0.9918032786885246,
+            "recall": 0.8962962962962963,
+            "f1-score": 0.9416342412451362,
+            "support": 270.0
+        },
+        "normal": {
+            "precision": 0.9154518950437318,
+            "recall": 0.9736434108527132,
+            "f1-score": 0.9436513899323816,
+            "support": 645.0
+        },
+        "suspicious_network_activity": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 260.0
+        },
+        "unauthorized_access": {
+            "precision": 0.8753709198813057,
+            "recall": 0.8309859154929577,
+            "f1-score": 0.8526011560693642,
+            "support": 355.0
+        },
+        "accuracy": 0.938,
+        "macro avg": {
+            "precision": 0.9498293172499156,
+            "recall": 0.9379747832608407,
+            "f1-score": 0.9432488176322879,
+            "support": 2000.0
+        },
+        "weighted avg": {
+            "precision": 0.9386304923386571,
+            "recall": 0.938,
+            "f1-score": 0.9375936964346885,
+            "support": 2000.0
+        }
+    }
+}

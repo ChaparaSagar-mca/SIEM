@@ -1,0 +1,73 @@
+{
+    "dataset": "datasets\\security_events.csv",
+    "total_records": 10000,
+    "feature_count": 15,
+    "features": [
+        "source_port",
+        "destination_port",
+        "bytes_sent",
+        "bytes_received",
+        "duration_seconds",
+        "failed_login_count",
+        "connection_count",
+        "unique_destination_count",
+        "cpu_percent",
+        "memory_percent",
+        "process_count",
+        "protocol",
+        "auth_result",
+        "username",
+        "privilege_level"
+    ],
+    "target": "label",
+    "group_column": "campaign_id",
+    "split_method": "GroupShuffleSplit",
+    "test_size": 0.2,
+    "random_state": 42,
+    "class_names": [
+        "anomalous_system_activity",
+        "failed_authentication",
+        "malware_related_activity",
+        "normal",
+        "suspicious_network_activity",
+        "unauthorized_access"
+    ],
+    "models": [
+        {
+            "model": "Random Forest",
+            "accuracy": 0.9355,
+            "precision_macro": 0.9499259579865349,
+            "recall_macro": 0.9345428453136718,
+            "f1_macro": 0.9408884439951107
+        },
+        {
+            "model": "XGBoost",
+            "accuracy": 0.9385,
+            "precision_macro": 0.9515451893225176,
+            "recall_macro": 0.9372172965796723,
+            "f1_macro": 0.9435659347097901
+        },
+        {
+            "model": "SVM",
+            "accuracy": 0.9,
+            "precision_macro": 0.909195493033637,
+            "recall_macro": 0.9119008592067878,
+            "f1_macro": 0.9102336387302133
+        },
+        {
+            "model": "Logistic Regression",
+            "accuracy": 0.895,
+            "precision_macro": 0.9026446253698647,
+            "recall_macro": 0.9008674232279429,
+            "f1_macro": 0.9014785999538764
+        },
+        {
+            "model": "Gradient Boosting",
+            "accuracy": 0.938,
+            "precision_macro": 0.9498293172499156,
+            "recall_macro": 0.9379747832608407,
+            "f1_macro": 0.9432488176322879
+        }
+    ],
+    "note": "Synthetic dataset evaluation. Results must not be interpreted as real-world detection performance."
+}

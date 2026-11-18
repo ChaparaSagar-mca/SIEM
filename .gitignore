@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+build/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Log files
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+
+# Backup files
+*_backup.py
+*.swp
+*.swo
+
+# Temporary editor files
+*.swp
+*.swo
+*_backup.py
+
+# Local database
+*.db
+
+# Local log files
+*.log
+/models/security_v2_revised/random_forest.pkl

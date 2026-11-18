@@ -1,0 +1,10 @@
+logs:
+  - path: test_logs/access.log
+    format: combined
+  # Example absolute paths (uncomment and modify as needed):
+  # - path: /var/log/nginx/access.log
+  #   format: combined
+  # - path: /var/log/apache2/access.log
+  #   format: combined
+  # - path: /var/log/auth.log
+  #   format: syslog

@@ -1,0 +1,34 @@
+{
+    "saved_models": {
+        "Random Forest": "random_forest.pkl",
+        "XGBoost": "xgboost.pkl",
+        "SVM": "svm.pkl",
+        "Logistic Regression": "logistic_regression.pkl",
+        "Gradient Boosting": "gradient_boosting.pkl"
+    },
+    "model_selection": "No deployment winner selected using held-out test results.",
+    "evaluation_method": "All five pipelines were fitted on the same training records and evaluated on the same held-out test records.",
+    "anomaly_detector_training_records": 1603,
+    "feature_names": [
+        "status_code",
+        "hour",
+        "path_length",
+        "method_get",
+        "method_post",
+        "method_put",
+        "method_delete",
+        "method_other",
+        "user_agent_length",
+        "query_present",
+        "sqli_score",
+        "xss_score",
+        "traversal_score",
+        "scanner_score"
+    ],
+    "class_names": [
+        "malicious",
+        "normal",
+        "suspicious"
+    ],
+    "random_state": 42
+}

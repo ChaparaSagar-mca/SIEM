@@ -1,0 +1,16 @@
+{
+    "dataset": "datasets\\security_events.csv",
+    "total_records": 10000,
+    "unique_campaigns": 2000,
+    "random_seed": 42,
+    "synthetic_data": true,
+    "class_distribution": {
+        "normal": 3000,
+        "unauthorized_access": 1500,
+        "suspicious_network_activity": 1500,
+        "failed_authentication": 1500,
+        "anomalous_system_activity": 1000,
+        "malware_related_activity": 1500
+    },
+    "feature_policy": "Exclude event_id, campaign_id, timestamp, source_ip, destination_ip, event_source, event_type and label from model features until a validated feature design is finalized."
+}
