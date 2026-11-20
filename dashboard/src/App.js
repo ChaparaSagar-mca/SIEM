@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import SecurityLogs from './SecurityLogs';
 import {
   Container,
   Grid,
@@ -129,7 +130,7 @@ function App() {
     ],
     datasets: [
       {
-        label: 'Logs Processed',
+        label: 'Sample Log Volume (Illustrative)',
         data: [
           1200,
           1900,
@@ -203,7 +204,7 @@ function App() {
           <Card sx={{ bgcolor: '#e8f5e8' }}>
             <CardContent>
               <Typography variant="h6" color="textSecondary">
-                Logs Processed
+               Processing Success Rate
               </Typography>
               <Typography variant="h3" color="success.main">
                 {dashboardData?.logs?.success_rate ?? 0}%
@@ -213,17 +214,17 @@ function App() {
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
-          <Card sx={{ bgcolor: '#fff3e0' }}>
-            <CardContent>
-              <Typography variant="h6" color="textSecondary">
-                Threats Blocked
-              </Typography>
-              <Typography variant="h3" color="warning.main">
-                {dashboardData?.threats.blocked || 0}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+  <Card sx={{ bgcolor: '#fff3e0' }}>
+    <CardContent>
+      <Typography variant="h6" color="textSecondary">
+        Processing Attempts
+      </Typography>
+      <Typography variant="h3" color="warning.main">
+        {dashboardData?.logs?.total_attempts ?? 0}
+      </Typography>
+    </CardContent>
+  </Card>
+</Grid>
 
         
 <Grid item xs={12} sm={6} md={3}>
@@ -390,14 +391,20 @@ function App() {
                 </Typography>
 
                 <Typography variant="caption" color="textSecondary">
-                  {new Date(alert.timestamp).toLocaleString()}
-                </Typography>
+  {alert.created_at
+    ? new Date(alert.created_at.replace(' ', 'T') + 'Z').toLocaleString()
+    : 'Timestamp unavailable'}
+</Typography>
               </Alert>
             ))}
           </Paper>
         </Grid>
 
-      </Grid>
+            </Grid>
+
+      {/* Security Logs Section */}
+      <SecurityLogs />
+
     </Container>
   );
 }
